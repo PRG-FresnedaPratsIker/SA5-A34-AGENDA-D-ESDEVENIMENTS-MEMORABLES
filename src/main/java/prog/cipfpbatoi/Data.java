@@ -266,16 +266,12 @@ public class Data {
     }
 
     public static int getDiesMes(int mes, int any) {
-        switch (mes) {
-            case 1, 3, 5, 7, 8, 10, 12:
-                return 31;
-            case 2:
-                return isBisiesto(any) ? 29 : 28;
-            case 4, 6, 9, 11:
-                return 30;
-            default:
-                return -1;
-        }
+        return switch (mes) {
+            case 1, 3, 5, 7, 8, 10, 12 -> 31;
+            case 2 -> isBisiesto(any) ? 29 : 28;
+            case 4, 6, 9, 11 -> 30;
+            default -> -1;
+        };
     }
 
     public static int getDiesAny(int any) {
