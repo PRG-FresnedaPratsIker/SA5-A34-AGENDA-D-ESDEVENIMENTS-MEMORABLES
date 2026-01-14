@@ -92,9 +92,9 @@ public class Data {
         int dayOfYear = getDiesTranscorregutsEnAny() + 1;
 
         Data jan1 = new Data(1, 1, this.any);
-        int dowJan1 = jan1.getDiesTranscorregutsOrigen() % 7; // 0 diumenge, 1 dilluns...
+        int dowJan1 = jan1.getDiesTranscorregutsOrigen() % 7;
 
-        int deltaToMonday = (1 - dowJan1 + 7) % 7; // dies des de 1/1 fins el pròxim dilluns (0 si ja és dilluns)
+        int deltaToMonday = (1 - dowJan1 + 7) % 7;
         int firstMondayDayOfYear = 1 + deltaToMonday;
 
         if (firstMondayDayOfYear == 1) {
