@@ -189,34 +189,21 @@ public class Data {
     }
 
     private String getMesEnFormatText() {
-        switch (this.mes) {
-            case 1:
-                return "gener";
-            case 2:
-                return "febrer";
-            case 3:
-                return "març";
-            case 4:
-                return "abril";
-            case 5:
-                return "maig";
-            case 6:
-                return "juny";
-            case 7:
-                return "juliol";
-            case 8:
-                return "agost";
-            case 9:
-                return "setembre";
-            case 10:
-                return "octubre";
-            case 11:
-                return "novembre";
-            case 12:
-                return "desembre";
-            default:
-                return "mes_invalid";
-        }
+        return switch (this.mes) {
+            case 1 -> "gener";
+            case 2 -> "febrer";
+            case 3 -> "març";
+            case 4 -> "abril";
+            case 5 -> "maig";
+            case 6 -> "juny";
+            case 7 -> "juliol";
+            case 8 -> "agost";
+            case 9 -> "setembre";
+            case 10 -> "octubre";
+            case 11 -> "novembre";
+            case 12 -> "desembre";
+            default -> "mes_invalid";
+        };
     }
 
     private int getDiesTranscorregutsEnAny() {
@@ -240,24 +227,16 @@ public class Data {
     }
 
     private static String getNomDiaSetmana(int numDiaSetmana) {
-        switch (numDiaSetmana) {
-            case 0:
-                return "diumenge";
-            case 1:
-                return "dilluns";
-            case 2:
-                return "dimarts";
-            case 3:
-                return "dimecres";
-            case 4:
-                return "dijous";
-            case 5:
-                return "divendres";
-            case 6:
-                return "dissabte";
-            default:
-                return "dia_invalid";
-        }
+        return switch (numDiaSetmana) {
+            case 0 -> "diumenge";
+            case 1 -> "dilluns";
+            case 2 -> "dimarts";
+            case 3 -> "dimecres";
+            case 4 -> "dijous";
+            case 5 -> "divendres";
+            case 6 -> "dissabte";
+            default -> "dia_invalid";
+        };
     }
 
 
