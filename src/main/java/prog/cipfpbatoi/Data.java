@@ -69,8 +69,9 @@ public class Data {
     }
 
     public void mostrarEnFormatText() {
-        System.out.printf("%d-%s-%d%n", this.dia, getMesEnFormatText(), this.any);
+        System.out.printf("%02d-%s-%04d%n", this.dia, getMesEnFormatText(), this.any);
     }
+
 
     public boolean isIgual(Data data) {
         if (data == null) return false;
@@ -79,20 +80,21 @@ public class Data {
 
     public String getDiaSetmana() {
         int dies = getDiesTranscorregutsOrigen();
-        int r = dies % 7;
+        int r = (dies + 1) % 7;
         return getNomDiaSetmana(r);
     }
 
     public boolean isFestiu() {
-        int r = getDiesTranscorregutsOrigen() % 7;
+        int r = (getDiesTranscorregutsOrigen() + 1) % 7;
         return r == 0 || r == 6;
     }
+
 
     public int getNumeroSetmana() {
         int dayOfYear = getDiesTranscorregutsEnAny() + 1;
 
         Data jan1 = new Data(1, 1, this.any);
-        int dowJan1 = jan1.getDiesTranscorregutsOrigen() % 7;
+        int dowJan1 = (jan1.getDiesTranscorregutsOrigen() + 1) % 7;
 
         int deltaToMonday = (1 - dowJan1 + 7) % 7;
         int firstMondayDayOfYear = 1 + deltaToMonday;
@@ -104,6 +106,7 @@ public class Data {
             return 2 + (dayOfYear - firstMondayDayOfYear) / 7;
         }
     }
+
 
     public Data afegir(long dies) {
         if (dies < 0) return this.copy();
