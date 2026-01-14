@@ -3,9 +3,7 @@ package prog.cipfpbatoi;
 import java.io.InputStream;
 import java.util.Scanner;
 
-/**
- * @author Iker
- */
+
 public class GestorIO {
     static Scanner sc = new Scanner(System.in);
 

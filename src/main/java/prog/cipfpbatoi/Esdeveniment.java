@@ -82,4 +82,8 @@ public class Esdeveniment {
     }
 
 
+    public Data getData() {
+        return this.data;
+    }
+
 }
