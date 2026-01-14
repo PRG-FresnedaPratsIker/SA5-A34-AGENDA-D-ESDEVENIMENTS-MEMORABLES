@@ -1,10 +1,17 @@
 package prog.cipfpbatoi;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
+/**
+ * @author Iker
+ */
 public class GestorIO {
-    private static final Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
 
+    static void __setInputStreamForTests(InputStream in) {
+        sc = new Scanner(in);
+    }
 
     public static int llegirEnter(String missatge) {
         System.out.print(missatge);
@@ -38,5 +45,4 @@ public class GestorIO {
     public static void tancar() {
         sc.close();
     }
-
 }

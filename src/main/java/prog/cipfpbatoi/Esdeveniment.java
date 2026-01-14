@@ -2,9 +2,6 @@ package prog.cipfpbatoi;
 
 public class Esdeveniment {
 
-    /*
-    Aquesta classe conté tota la informació essencial sobre: el tipus d’esdeveniment (un valor entre Aniversari, Festiu, Especial o Altres), una nota descriptiva, la ubicació (opcional) i la data concreta en què es durà a terme l’esdeveniment (es obligatori fer servir la classe Data anteriorment implementada).
-     */
     private TipusEsdeveniment tipus;
     private String nota;
     private String ubicacio;
@@ -56,7 +53,8 @@ public class Esdeveniment {
 
     public boolean esMesProximA(Data dataComparar, Esdeveniment altreEsdeveniment) {
         if (dataComparar == null || altreEsdeveniment == null) {
-            throw new IllegalArgumentException("La data de comparació i l'altre esdeveniment no poden ser nuls.");
+            System.out.println("La data de comparació i l'altre esdeveniment no poden ser nuls.");
+            return false;
         }
 
         long diesFinsActual = this.data.getDiesDeDiferencia(dataComparar);
@@ -64,6 +62,23 @@ public class Esdeveniment {
 
         return diesFinsActual < diesFinsAltre;
 
+    }
+
+
+    public boolean teLlocDespres(Data dataComparar) {
+        if (dataComparar == null) {
+            System.out.println("La data de comparació no pot ser nul·la.");
+            return false;
+        }
+
+        return this.data.esPosteriorA(dataComparar);
+    }
+
+
+
+    public boolean haTingutLloc() {
+        Data hoy = new Data();
+        return !this.data.esPosteriorA(hoy);
     }
 
 

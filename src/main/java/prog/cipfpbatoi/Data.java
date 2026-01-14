@@ -21,7 +21,7 @@ public class Data {
     public Data() {
         Calendar cal = Calendar.getInstance();
         this.dia = cal.get(Calendar.DAY_OF_MONTH);
-        this.mes = cal.get(Calendar.MONTH) + 1; // Calendar: 0..11
+        this.mes = cal.get(Calendar.MONTH) + 1;
         this.any = cal.get(Calendar.YEAR);
     }
 
