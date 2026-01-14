@@ -3,7 +3,7 @@ package prog.cipfpbatoi;
 import java.util.Scanner;
 
 public class Menu {
-    private Agenda agenda;
+    private final Agenda agenda;
 
     public Menu() {
         this.agenda = new Agenda();
