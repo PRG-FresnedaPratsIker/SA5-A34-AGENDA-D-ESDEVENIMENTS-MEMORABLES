@@ -14,7 +14,7 @@ public class Menu {
 
         while (!eixir) {
             mostrarOpcions();
-            int opcio = llegirOpcioMenu(); // 1..4
+            int opcio = llegirOpcioMenu();
 
             switch (opcio) {
                 case 1:
