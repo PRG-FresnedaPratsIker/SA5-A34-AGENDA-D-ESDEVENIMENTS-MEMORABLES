@@ -58,8 +58,7 @@ public class Agenda {
         long minDiferencia = Long.MAX_VALUE;
 
         if (esdeveniment1 != null) {
-            long diferencia = esdeveniment1.getData().getDiesDeDiferencia(data);
-            minDiferencia = diferencia;
+            minDiferencia = esdeveniment1.getData().getDiesDeDiferencia(data);
             mesProxim = esdeveniment1;
         }
 
