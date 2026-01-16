@@ -51,7 +51,7 @@ public class Menu {
         do {
             opcio = GestorIO.llegirEnter("Seleccione una opció (1-4): ");
             if (opcio < 1 || opcio > 4) {
-                System.out.println("Opció no vàlida. Si us plau, seleccione una opció entre 1 i 4.");
+                System.out.println("Opció no vàlida. seleccione una opció entre 1 i 4.");
             }
         } while (opcio < 1 || opcio > 4);
 
