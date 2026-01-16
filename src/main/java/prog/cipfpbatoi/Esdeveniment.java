@@ -2,9 +2,9 @@ package prog.cipfpbatoi;
 
 public class Esdeveniment {
 
-    private TipusEsdeveniment tipus;
-    private String nota;
-    private String ubicacio;
+    private final TipusEsdeveniment tipus;
+    private final String nota;
+    private final String ubicacio;
     private Data data;
 
 
