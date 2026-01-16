@@ -57,20 +57,31 @@ public class Agenda {
         Esdeveniment mesProxim = null;
         long minDiferencia = Long.MAX_VALUE;
 
-        Esdeveniment[] esdeveniments = {esdeveniment1, esdeveniment2, esdeveniment3};
+        if (esdeveniment1 != null) {
+            long diferencia = esdeveniment1.getData().getDiesDeDiferencia(data);
+            minDiferencia = diferencia;
+            mesProxim = esdeveniment1;
+        }
 
-        for (Esdeveniment e : esdeveniments) {
-            if (e != null) {
-                long diferencia = e.getData().getDiesDeDiferencia(data);
-                if (diferencia < minDiferencia) {
-                    minDiferencia = diferencia;
-                    mesProxim = e;
-                }
+        if (esdeveniment2 != null) {
+            long diferencia = esdeveniment2.getData().getDiesDeDiferencia(data);
+            if (mesProxim == null || diferencia < minDiferencia) {
+                minDiferencia = diferencia;
+                mesProxim = esdeveniment2;
+            }
+        }
+
+        if (esdeveniment3 != null) {
+            long diferencia = esdeveniment3.getData().getDiesDeDiferencia(data);
+            if (mesProxim == null || diferencia < minDiferencia) {
+                minDiferencia = diferencia;
+                mesProxim = esdeveniment3;
             }
         }
 
         return mesProxim;
     }
+
 
 
 
